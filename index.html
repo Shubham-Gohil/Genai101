@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Lion Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6f61;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffefef;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Amazing Lion Facts</h1>
+        <ul id="facts-list"></ul>
+    </div>
+    <script>
+        const facts = [
+            "Unlike most other big cats, lions are highly social animals. They live in groups called prides, which can consist of up to 30 individuals, including females, their cubs, and a few males.",
+            "Lions are known for their powerful roars, which can be heard up to 5 miles (8 kilometers) away. Roaring helps them communicate with other members of the pride and establish territory.",
+            "Male lions are easily recognizable by their manes, which can vary in color from blonde to black. The mane's size and color can indicate a male's health and virility.",
+            "Lions are primarily nocturnal hunters. They take advantage of the cooler temperatures at night to hunt their prey, which includes antelopes, zebras, and wildebeests.",
+            "Lions are known for their leisurely lifestyle, spending up to 20 hours a day resting or sleeping. This conserves energy for hunting and patrolling their territory.",
+            "Despite their large size, lions can reach speeds of up to 50 miles per hour (80 kilometers per hour) in short bursts when chasing prey.",
+            "Lion cubs are born with spots on their fur, which help camouflage them in the grass. These spots usually fade as they grow older.",
+            "Female lions do most of the hunting for the pride. They often work together to stalk and ambush prey, using teamwork to increase their chances of a successful hunt.",
+            "Lions are territorial and will fiercely defend their territory from intruders. Males patrol the boundaries and mark their territory with scent markings and roars.",
+            "Lions are currently listed as vulnerable by the International Union for Conservation of Nature (IUCN). Their populations are declining due to habitat loss, human-wildlife conflict, and poaching. Conservation efforts are crucial to their survival."
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const factsList = document.getElementById('facts-list');
+            facts.forEach(fact => {
+                const listItem = document.createElement('li');
+                listItem.textContent = fact;
+                factsList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
