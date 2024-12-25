@@ -7,44 +7,56 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            background-image: url('https://example.com/lion-background.jpg'); /* Replace with a URL to a lion-related background image */
+            background-size: cover;
+            color: #fff;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
             max-width: 800px;
-            margin: 50px auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
             color: #ff6f61;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
         }
 
-        li {
-            background-color: #ffefef;
-            margin: 10px 0;
-            padding: 15px;
+        button {
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
             border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #e55b50;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Amazing Lion Facts</h1>
-        <ul id="facts-list"></ul>
+        <p id="fact"></p>
+        <button onclick="showRandomFact()">Show Random Fact</button>
     </div>
     <script>
         const facts = [
@@ -60,14 +72,13 @@
             "Lions are currently listed as vulnerable by the International Union for Conservation of Nature (IUCN). Their populations are declining due to habitat loss, human-wildlife conflict, and poaching. Conservation efforts are crucial to their survival."
         ];
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const factsList = document.getElementById('facts-list');
-            facts.forEach(fact => {
-                const listItem = document.createElement('li');
-                listItem.textContent = fact;
-                factsList.appendChild(listItem);
-            });
-        });
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[randomIndex];
+        }
+
+        // Show a random fact on page load
+        document.addEventListener('DOMContentLoaded', showRandomFact);
     </script>
 </body>
 </html>
